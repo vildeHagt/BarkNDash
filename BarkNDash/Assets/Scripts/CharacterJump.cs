@@ -1,31 +1,20 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; // Required for PlayerInput
 
 public class CharacterJump : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float jump;
     private bool isGrounded = true;
-    private PlayerInput playerInput;
-    private InputAction touchAction;
 
-    private void Awake()
+    void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
-        touchAction = playerInput.actions["TouchPress"];
+        rb = GetComponent<Rigidbody2D>();
+        Debug.Log("PlayerJump script started. Rigidbody2D component: " + rb);
     }
 
-    private void OnEnable()
-    {
-        touchAction.performed += TouchPressed;
-    }
-
-    private void OnDisable()
-    {
-        touchAction.performed -= TouchPressed;
-    }
-
-    private void TouchPressed(InputAction.CallbackContext context)
+    // This method will be called by PlayerInput when the "Jump" action is triggered
+    public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed && isGrounded)
         {
@@ -37,7 +26,6 @@ public class CharacterJump : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the player has landed on the ground
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
