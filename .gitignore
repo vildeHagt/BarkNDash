@@ -97,3 +97,16 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+# Exclude large media and asset files
+*.psd
+*.tif
+*.tiff
+*.mp4
+*.mov
+*.avi
+*.wav
+*.fbx
+*.obj
+*.gltf
+*.glb
+
