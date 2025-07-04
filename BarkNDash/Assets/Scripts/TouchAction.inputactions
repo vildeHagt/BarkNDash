@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "TouchPress",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "ca00ce27-8129-4415-9bbd-9d8929d5d6af",
-                    "expectedControlType": "Touch",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -19,8 +19,19 @@
                 {
                     "name": "",
                     "id": "6b03c8e3-5cc4-4a17-b110-573a4f8d332c",
-                    "path": "<Touchscreen>/primaryTouch",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80a7d8cf-8e50-4b32-8a57-a5ba1f16c431",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "TouchPress",

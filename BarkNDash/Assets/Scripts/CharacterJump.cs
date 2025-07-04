@@ -1,34 +1,36 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Required for PlayerInput
+using UnityEngine.InputSystem;
 
 public class CharacterJump : MonoBehaviour
 {
+    private PlayerInput playerInput;
+    private InputAction touchPressAction;
     private Rigidbody2D rb;
+
     public float jump;
-    private bool isGrounded = true;
 
-    void Start()
+    private void Awake()
     {
+        playerInput = GetComponent<PlayerInput>();
+        touchPressAction = playerInput.actions["TouchPress"];
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log("PlayerJump script started. Rigidbody2D component: " + rb);
     }
 
-    // This method will be called by PlayerInput when the "Jump" action is triggered
-    public void OnJump(InputAction.CallbackContext context)
+    private void OnEnable()
     {
-        if (context.performed && isGrounded)
-        {
-            Debug.Log("player jump");
-            rb.AddForce(new Vector2(0f, jump), ForceMode2D.Impulse);
-            isGrounded = false;
-        }
+        touchPressAction.performed += TouchPressed;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnDisable()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        touchPressAction.performed -= TouchPressed;
+    }
+
+    private void TouchPressed(InputAction.CallbackContext context)
+    {
+        if (rb != null)
         {
-            isGrounded = true;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump);
         }
     }
 }
