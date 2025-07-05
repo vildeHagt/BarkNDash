@@ -6,7 +6,6 @@ public class BouncingBall : MonoBehaviour
     private Animator animator;
     public bool isOnGround = false;
     public bool touchesPlayer = false;
-    private Score score = new();
 
     private void Awake()
     {
@@ -21,7 +20,7 @@ public class BouncingBall : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Destroy(gameObject);
-            score.AddPoints(100); 
+            Score.Instance.AddPoints(100); 
         }
     }
 

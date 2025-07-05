@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Score : MonoBehaviour
@@ -5,6 +6,7 @@ public class Score : MonoBehaviour
     public static Score Instance { get; private set; }
 
     private int currentScore = 0;
+    private TextMeshProUGUI scoreText;
 
     private void Awake()
     {
@@ -17,22 +19,18 @@ public class Score : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        scoreText = GetComponent<TextMeshProUGUI>();
     }
 
     public void AddPoints(int points)
     {
         currentScore += points;
-        Debug.Log("Score: " + currentScore);
+        scoreText.text = "Score: " + currentScore;
     }
 
     public void ResetScore()
     {
         currentScore = 0;
         Debug.Log("Score reset.");
-    }
-
-    public int GetScore()
-    {
-        return currentScore;
     }
 }
