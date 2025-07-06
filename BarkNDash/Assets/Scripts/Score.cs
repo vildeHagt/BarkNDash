@@ -30,7 +30,10 @@ public class Score : MonoBehaviour
 
     public void DestroyScore()
     {
-        Destroy(gameObject);
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public int GetScore()
