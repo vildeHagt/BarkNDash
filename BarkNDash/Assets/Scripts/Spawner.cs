@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
         GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
 
         Vector3 spawnPosition = gameObject.CompareTag("Reward")
-            ? transform.position + new Vector3(0, Random.value, 0)
+            ? transform.position + new Vector3(0, Random.Range(-2.0f, 4.0f), 0)
             : transform.position;
 
         GameObject spawnedObstacle = Instantiate(obstacleToSpawn, spawnPosition, Quaternion.identity);

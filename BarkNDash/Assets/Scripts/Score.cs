@@ -36,7 +36,5 @@ public class Score : MonoBehaviour
     public int GetScore()
     {
         return currentScore;
-        DestroyScore();
-
     }
 }
