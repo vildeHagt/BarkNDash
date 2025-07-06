@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     {
         timeUntilObstacleSpawn += Time.deltaTime;
 
-        if (timeUntilObstacleSpawn >= obstacleSpawnTime)
+        if (timeUntilObstacleSpawn >= obstacleSpawnTime && !GameController.Instance.IsGameOver())
         {
             Spawn();
             timeUntilObstacleSpawn = 0f;

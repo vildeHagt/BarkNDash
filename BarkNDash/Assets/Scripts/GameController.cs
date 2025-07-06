@@ -4,6 +4,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
     public GameOverScreen GameOverScreen;
+    public bool isGameOver = false;
 
     public void Awake()
     {
@@ -15,6 +16,12 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
+        isGameOver = true;
         GameOverScreen.Setup(Score.Instance.GetScore());
+    }
+
+    public bool IsGameOver()
+    {
+        return isGameOver;
     }
 }
