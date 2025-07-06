@@ -33,4 +33,9 @@ public class Score : MonoBehaviour
         currentScore = 0;
         Debug.Log("Score reset.");
     }
+
+    public int GetScore()
+    {
+        return currentScore;
+    }
 }
