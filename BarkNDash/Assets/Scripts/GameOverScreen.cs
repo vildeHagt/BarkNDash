@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
@@ -9,5 +10,10 @@ public class GameOverScreen : MonoBehaviour
     {
         gameObject.SetActive(true);
         scoreText.text = "SCORE: " + score;
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene("BarkNDashScene");
     }
 }
