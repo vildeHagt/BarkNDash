@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7215221977509081511}
   - component: {fileID: 5828830525210081484}
   - component: {fileID: 513871946507690650}
+  - component: {fileID: 2543513555516462023}
   m_Layer: 0
   m_Name: StrollerOb
   m_TagString: Obstacle
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1043677638544298584}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.64, y: -2.69, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 26.56, y: -4.95, z: 0}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6246335823711321323}
@@ -117,10 +118,23 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &2543513555516462023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043677638544298584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18224066ab680854cae90a810f251455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 13
 --- !u!1 &9108370741415011894
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +261,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.91, y: 1.21}
+    oldSize: {x: 1.421875, y: 1.890625}
     newSize: {x: 0.91, y: 1.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

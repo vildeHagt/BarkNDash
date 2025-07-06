@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2700173724634475162}
   - component: {fileID: 7548847527551968034}
   - component: {fileID: 4231862850283572680}
+  - component: {fileID: 5293721669780964132}
   m_Layer: 8
   m_Name: ManObstacle
   m_TagString: Obstacle
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 726512103201848483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.98, y: -2.7, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 30.61, y: -5.33, z: 0}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 693349643264339185}
@@ -58,7 +59,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 6
@@ -121,6 +122,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffer: 1
+--- !u!114 &5293721669780964132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726512103201848483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18224066ab680854cae90a810f251455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 13
 --- !u!1 &5568034753149725587
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +261,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.73, y: 1.1}
+    oldSize: {x: 1.140625, y: 1.71875}
     newSize: {x: 0.73, y: 1.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
