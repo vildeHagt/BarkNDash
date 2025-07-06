@@ -41,12 +41,11 @@ public class CharacterJump : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Obstacle")
+        if (collision.transform.tag != "Reward")
         {
             isOnGround = true;
             animator.SetBool("isJumping", !isOnGround);
         }
-
     }
 
     private void FixedUpdate()
