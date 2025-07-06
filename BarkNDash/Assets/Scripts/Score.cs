@@ -28,14 +28,15 @@ public class Score : MonoBehaviour
         scoreText.text = "Score: " + currentScore;
     }
 
-    public void ResetScore()
+    public void DestroyScore()
     {
-        currentScore = 0;
-        Debug.Log("Score reset.");
+        Destroy(gameObject);
     }
 
     public int GetScore()
     {
         return currentScore;
+        DestroyScore();
+
     }
 }

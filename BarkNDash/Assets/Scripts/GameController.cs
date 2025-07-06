@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     {
         isGameOver = true;
         GameOverScreen.Setup(Score.Instance.GetScore());
+        Score.Instance.DestroyScore();
     }
 
     public bool IsGameOver()

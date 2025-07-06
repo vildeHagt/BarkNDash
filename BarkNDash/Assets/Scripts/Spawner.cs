@@ -27,7 +27,12 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
-        GameObject spawnedObstacle = Instantiate(obstacleToSpawn, transform.position, Quaternion.identity);
+
+        Vector3 spawnPosition = gameObject.CompareTag("Reward")
+            ? transform.position + new Vector3(0, Random.value, 0)
+            : transform.position;
+
+        GameObject spawnedObstacle = Instantiate(obstacleToSpawn, spawnPosition, Quaternion.identity);
 
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
         obstacleRB.linearVelocity = Vector2.left * obstacleSpeed;
