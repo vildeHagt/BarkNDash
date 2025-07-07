@@ -28,14 +28,6 @@ public class Score : MonoBehaviour
         scoreText.text = "Score: " + currentScore;
     }
 
-    public void DestroyScore()
-    {
-        if (gameObject != null)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public int GetScore()
     {
         return currentScore;

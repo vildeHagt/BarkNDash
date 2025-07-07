@@ -7,12 +7,20 @@ public class BouncingBall : MonoBehaviour
 
     public bool isOnGround = false;
     public bool touchesPlayer = false;
-    public float speed = 5f;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        // Ignore collisions with obstacles
+        int obstacleLayer = LayerMask.NameToLayer("Obstacle");
+        int tennisBallLayer = gameObject.layer;
+
+        if (obstacleLayer >= 0)
+        {
+            Physics2D.IgnoreLayerCollision(tennisBallLayer, obstacleLayer, true);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,9 +41,5 @@ public class BouncingBall : MonoBehaviour
         animator.SetBool("isOnGround", isOnGround);
     }
 
-    private void FixedUpdate()
-    {
-        Vector2 newPosition = rb.position + Vector2.down * speed * Time.fixedDeltaTime;
-        rb.MovePosition(newPosition);
-    }
+    // Removed FixedUpdate to allow natural gravity-based falling
 }
